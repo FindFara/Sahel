@@ -1,8 +1,98 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+@{
+    ViewData["Title"] = "تولدت مبارک ساحل";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<section class="birthday-page" dir="rtl" aria-label="صفحه تولد ساحل">
+    <div class="floating-emoji" aria-hidden="true">
+        <span style="--x: 8%; --delay: 0s; --dur: 9s;">🎈</span>
+        <span style="--x: 24%; --delay: 1.2s; --dur: 11s;">✨</span>
+        <span style="--x: 42%; --delay: .4s; --dur: 10s;">💖</span>
+        <span style="--x: 63%; --delay: 2s; --dur: 12s;">🎂</span>
+        <span style="--x: 81%; --delay: .8s; --dur: 9.5s;">🌸</span>
+        <span style="--x: 94%; --delay: 1.7s; --dur: 10.5s;">🥳</span>
+    </div>
+
+    <section class="hero-card reveal" id="home">
+        <div class="blob blob-one" data-parallax="-0.08" aria-hidden="true"></div>
+        <div class="blob blob-two" data-parallax="0.12" aria-hidden="true"></div>
+        <div class="doodle doodle-flower" data-parallax="0.16" aria-hidden="true">✿</div>
+        <div class="doodle doodle-spark" data-parallax="-0.18" aria-hidden="true">✦</div>
+
+        <nav class="birthday-nav" aria-label="ناوبری صفحه تولد">
+            <a href="#home">خانه</a>
+            <a href="#letter">نامه</a>
+            <a href="#wishes">آرزوها</a>
+            <a href="#memories">خاطره‌ها</a>
+        </nav>
+
+        <div class="hero-content">
+            <div class="hero-copy" data-parallax="0.04">
+                <p class="eyebrow">Landing Page • Birthday</p>
+                <h1><span>ساحل</span> عزیزم<br />تولدت مبارک</h1>
+                <p class="hero-text">
+                    ۱۶ اسفند، روزی که دنیا قشنگ‌تر شد؛ این صفحه کوچیک برای توئه، با کلی قلب، نور، حرکت و حال خوب.
+                </p>
+                <div class="hero-actions">
+                    <a class="btn-birthday" href="#letter">پیام منو بخون 💌</a>
+                    <span class="date-pill">۱۶ اسفند 🎂</span>
+                </div>
+            </div>
+
+            <div class="photo-stage" data-parallax="-0.06">
+                <div class="party-hat" aria-hidden="true"></div>
+                <div class="photo-outline">
+                    <img src="~/images/sahel-portrait.svg" alt="تصویر تزئینی ساحل برای صفحه تولد" />
+                </div>
+                <div class="cake-badge" aria-hidden="true">🎂</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="love-letter reveal" id="letter">
+        <div class="section-kicker">برای ساحل</div>
+        <h2>یه نامه کوچیک، با کلی حس خوب 💙</h2>
+        <p>
+            ساحل جان، امیدوارم هر روزت مثل اسم قشنگت آروم، روشن و پر از موج‌های خوب باشه. تولدت بهونه‌ایه که بگم
+            بودنت قشنگ‌ترین اتفاقه و لبخندت می‌تونه کل روزمو بسازه.
+        </p>
+        <div class="music-card" data-parallax="0.05">
+            <span>♪</span>
+            <div>
+                <strong>مود امروز:</strong>
+                <small>رقصیدن قلب‌ها، بادکنک‌ها و ستاره‌ها برای تو</small>
+            </div>
+        </div>
+    </section>
+
+    <section class="wish-grid" id="wishes">
+        <article class="wish-card reveal" data-parallax="0.08">
+            <span>✨</span>
+            <h3>آرزوی اول</h3>
+            <p>هر چیزی که دلت می‌خواد، با قشنگ‌ترین شکل ممکن بهت برسه.</p>
+        </article>
+        <article class="wish-card reveal" data-parallax="-0.05">
+            <span>💖</span>
+            <h3>آرزوی دوم</h3>
+            <p>لبخندت هیچ‌وقت کم‌رنگ نشه و همیشه دلیل‌های تازه برای خوشحالی داشته باشی.</p>
+        </article>
+        <article class="wish-card reveal" data-parallax="0.1">
+            <span>🌙</span>
+            <h3>آرزوی سوم</h3>
+            <p>شب‌هات پر از آرامش و روزهات پر از اتفاق‌های شیرین باشه.</p>
+        </article>
+    </section>
+
+    <section class="memory-strip reveal" id="memories">
+        <div>
+            <p class="section-kicker">Scroll Magic</p>
+            <h2>با اسکرول، همه‌چی برای ساحل حرکت می‌کنه 🥳</h2>
+            <p>این کارت‌ها، ایموجی‌ها و شکل‌های رنگی با بالا و پایین رفتن صفحه جون می‌گیرن تا حس قالب مرجع رو موبایلی و مدرن‌تر کنن.</p>
+        </div>
+        <div class="memory-orbit" aria-hidden="true">
+            <span>🎁</span>
+            <span>💫</span>
+            <span>🎉</span>
+            <span>❤️</span>
+        </div>
+    </section>
+</section>
