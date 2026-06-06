@@ -1,0 +1,66 @@
+<svg width="900" height="900" viewBox="0 0 900 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">گربه نارنجی شاد</title>
+  <desc id="desc">گربه نارنجی کارتونی با دست‌های باز و برگ‌های پاییزی، بازطراحی برداری از عکس ارسالی</desc>
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="43%" r="70%">
+      <stop stop-color="#FFFADF"/>
+      <stop offset=".72" stop-color="#FFEFA8"/>
+      <stop offset="1" stop-color="#FFD36D"/>
+    </radialGradient>
+    <linearGradient id="fur" x1="266" y1="154" x2="618" y2="790" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFC949"/>
+      <stop offset=".43" stop-color="#FF932E"/>
+      <stop offset="1" stop-color="#D5531B"/>
+    </linearGradient>
+    <linearGradient id="furLight" x1="330" y1="170" x2="520" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFE08A"/>
+      <stop offset="1" stop-color="#FF9B32"/>
+    </linearGradient>
+    <linearGradient id="belly" x1="446" y1="360" x2="504" y2="720" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF8D8"/>
+      <stop offset="1" stop-color="#FFE09A"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="145%">
+      <feDropShadow dx="0" dy="24" stdDeviation="20" flood-color="#7C2B00" flood-opacity=".22"/>
+    </filter>
+    <filter id="blurLeaf"><feGaussianBlur stdDeviation="2.6"/></filter>
+  </defs>
+  <rect width="900" height="900" fill="url(#bg)"/>
+  <g opacity=".70" filter="url(#blurLeaf)">
+    <path d="M38 56c68 8 126-8 176-48-15 71-73 107-176 48zM681 42c69 9 128-7 178-47-15 72-75 108-178 47zM14 150c108-4 184 29 229 99-105-1-181-33-229-99zM888 145c-107-5-184 27-230 97 105 0 181-31 230-97z" fill="#FF9E22"/>
+    <path d="M8 824c76 5 142-15 197-60-15 78-77 120-197 60zM681 825c76 5 142-15 197-60-15 78-77 120-197 60z" fill="#F86518"/>
+  </g>
+  <g opacity=".92">
+    <path d="M151 326c39-27 68-27 92-3-35 21-65 27-92 3zM650 307c42-21 70-19 90 7-36 16-66 18-90-7zM718 654c43 4 66 20 71 50-38-5-62-20-71-50zM104 624c43-5 69 7 80 36-39 2-66-10-80-36zM557 146c37 14 55 36 50 65-33-15-49-36-50-65zM238 160c37 14 55 36 50 65-33-15-50-36-50-65zM132 743c36-18 64-15 83 10-34 14-62 10-83-10zM774 526c32-25 60-27 85-7-31 21-59 23-85 7zM60 451c31-24 59-26 83-5-30 19-58 21-83 5z" fill="#E95716"/>
+    <path d="M676 169c31-24 59-26 83-5-30 19-58 21-83 5zM425 73c19 6 30 19 32 40-20-5-31-18-32-40zM512 94c21 0 35 10 43 29-21 2-35-8-43-29zM327 104c20-4 36 2 48 20-21 6-37 0-48-20z" fill="#FF7B17"/>
+  </g>
+  <ellipse cx="455" cy="792" rx="178" ry="34" fill="#A84615" opacity=".16"/>
+  <g filter="url(#softShadow)">
+    <path d="M267 368c-60-8-86-40-78-80 8-39 46-56 77-30 24 20 33 57 46 94l-45 16z" fill="url(#fur)"/>
+    <path d="M633 368c60-8 86-40 78-80-8-39-46-56-77-30-24 20-33 57-46 94l45 16z" fill="url(#fur)"/>
+    <path d="M306 331c-34 51-52 114-52 188 0 153 80 266 194 266 117 0 199-115 199-267 0-78-18-142-54-193-75-55-207-56-287 6z" fill="url(#fur)"/>
+    <path d="M376 432c-58-22-124-54-167-120-28 78 11 165 86 200l81-80z" fill="url(#fur)"/>
+    <path d="M524 432c58-22 124-54 167-120 28 78-11 165-86 200l-81-80z" fill="url(#fur)"/>
+    <path d="M315 251l-43-103c-8-20 16-38 33-23l84 70-74 56z" fill="#F57522"/>
+    <path d="M586 251l43-103c8-20-16-38-33-23l-84 70 74 56z" fill="#F57522"/>
+    <path d="M319 222l-18-45 39 33-21 12zM581 222l18-45-39 33 21 12z" fill="#FFD8AF"/>
+    <path d="M450 187c94 0 158 65 158 143 0 90-70 153-158 153s-158-63-158-153c0-78 64-143 158-143z" fill="url(#furLight)"/>
+    <path d="M394 236c40 17 77 17 112 0-20 49-77 63-112 0z" fill="#FFE9B9" opacity=".72"/>
+    <path d="M287 414c31 23 60 32 88 25M613 414c-31 23-60 32-88 25M310 487c29 20 57 26 86 18M590 487c-29 20-57 26-86 18M332 606c36 15 75 18 118 8M568 606c-36 15-75 18-118 8M347 690c45 10 85 10 122 0" stroke="#C64D1D" stroke-width="18" stroke-linecap="round" opacity=".64"/>
+    <path d="M350 493c8-50 45-86 100-86s94 37 102 86l34 197c-32 59-83 89-138 89-55 0-104-30-133-89l35-197z" fill="url(#belly)"/>
+    <path d="M356 305c24-33 57-32 80-4" stroke="#22111B" stroke-width="13" stroke-linecap="round"/>
+    <path d="M466 301c25-28 59-29 81 4" stroke="#22111B" stroke-width="13" stroke-linecap="round"/>
+    <path d="M433 348c10-15 25-15 35 0l-18 17-17-17z" fill="#C01E49"/>
+    <path d="M450 363c-7 30-32 40-58 28M450 363c7 30 32 40 58 28" stroke="#5F2428" stroke-width="10" stroke-linecap="round"/>
+    <path d="M403 395c32 33 70 33 102 0" stroke="#A51F31" stroke-width="14" stroke-linecap="round"/>
+    <path d="M348 348l-92-16M348 374l-95 11M552 348l92-16M552 374l95 11" stroke="#A64A20" stroke-width="7" stroke-linecap="round" opacity=".7"/>
+    <path d="M280 560c-78 17-112-24-109-67" stroke="#E76724" stroke-width="42" stroke-linecap="round"/>
+    <path d="M620 560c78 17 112-24 109-67" stroke="#E76724" stroke-width="42" stroke-linecap="round"/>
+    <path d="M269 562c-80 20-101 86-64 129 42 51 135 28 154-48" stroke="url(#fur)" stroke-width="48" stroke-linecap="round"/>
+    <path d="M365 760c-29 50-74 64-112 30M535 760c29 50 74 64 112 30" stroke="#F08A34" stroke-width="46" stroke-linecap="round"/>
+    <circle cx="203" cy="491" r="8" fill="#9D1F25"/><circle cx="225" cy="502" r="8" fill="#9D1F25"/><circle cx="718" cy="491" r="8" fill="#9D1F25"/><circle cx="696" cy="502" r="8" fill="#9D1F25"/>
+  </g>
+  <g opacity=".95">
+    <circle cx="139" cy="503" r="5" fill="#fff" opacity=".9"/><circle cx="672" cy="398" r="5" fill="#fff" opacity=".85"/><circle cx="736" cy="655" r="4" fill="#fff" opacity=".85"/>
+  </g>
+</svg>
