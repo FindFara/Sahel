@@ -1,8 +1,132 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+@{
+    ViewData["Title"] = "تولدت مبارک ساحل";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<section class="login-gate" data-login-gate dir="rtl" aria-label="ورود به صفحه تولد ساحل">
+    <div class="login-card reveal is-visible">
+        <img class="login-cat" src="~/images/haku-cat.svg" alt="گربه نارنجی شاد" />
+        <p class="section-kicker">Secret Birthday</p>
+        <h1>اول اسم رو بگو 🐾</h1>
+        <form class="login-form" data-login-form autocomplete="off">
+            <label for="birthdayPassword">اسم</label>
+            <div class="login-row">
+                <input id="birthdayPassword" name="birthdayPassword" type="text" inputmode="text" placeholder="اسم رو وارد کن" aria-describedby="loginError" />
+                <button type="submit">ورود</button>
+            </div>
+            <p class="login-error" id="loginError" data-login-error role="status" aria-live="polite"></p>
+        </form>
+    </div>
+</section>
+
+<section class="birthday-page is-locked" data-birthday-page dir="rtl" aria-label="صفحه تولد ساحل" aria-hidden="true">
+    <div class="floating-emoji" aria-hidden="true">
+        <span style="--x: 8%; --delay: 0s; --dur: 9s;">🎈</span>
+        <span style="--x: 24%; --delay: 1.2s; --dur: 11s;">✨</span>
+        <span style="--x: 42%; --delay: .4s; --dur: 10s;">💖</span>
+        <span style="--x: 63%; --delay: 2s; --dur: 12s;">🎂</span>
+        <span style="--x: 81%; --delay: .8s; --dur: 9.5s;">🌸</span>
+        <span style="--x: 94%; --delay: 1.7s; --dur: 10.5s;">🥳</span>
+    </div>
+
+    <section class="hero-card reveal" id="home">
+        <div class="blob blob-one" data-parallax="-0.08" aria-hidden="true"></div>
+        <div class="blob blob-two" data-parallax="0.12" aria-hidden="true"></div>
+        <div class="doodle doodle-flower" data-parallax="0.16" aria-hidden="true">✿</div>
+        <div class="doodle doodle-spark" data-parallax="-0.18" aria-hidden="true">✦</div>
+
+        <nav class="birthday-nav" aria-label="ناوبری صفحه تولد">
+            <a href="#home">خانه</a>
+            <a href="#letter">نامه</a>
+            <a href="#wishes">آرزوها</a>
+            <a href="#memories">گربه‌ها</a>
+        </nav>
+
+        <div class="hero-content">
+            <div class="hero-copy" data-parallax="0.04">
+                <p class="eyebrow">Landing Page • Birthday</p>
+                <h1><span>ساحل</span> عزیزم<br />تولدت مبارک</h1>
+                <p class="hero-text">
+                    ۱۶ اسفند، روزی که دنیا قشنگ‌تر شد؛ این صفحه کوچیک برای توئه، با کلی قلب، نور، حرکت و حال خوب.
+                </p>
+                <div class="hero-actions">
+                    <a class="btn-birthday" href="#letter">پیام منو بخون 💌</a>
+                    <span class="date-pill">۱۶ اسفند 🎂</span>
+                </div>
+                <div class="countdown-card" aria-label="شمارش معکوس تا تولد بعدی ساحل">
+                    <p>تا تولد بعدی ساحل مونده:</p>
+                    <div class="countdown-grid" data-countdown>
+                        <span><strong data-countdown-part="days">--</strong><small>روز</small></span>
+                        <span><strong data-countdown-part="hours">--</strong><small>ساعت</small></span>
+                        <span><strong data-countdown-part="minutes">--</strong><small>دقیقه</small></span>
+                        <span><strong data-countdown-part="seconds">--</strong><small>ثانیه</small></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="photo-stage" data-parallax="-0.06">
+                <div class="party-hat" aria-hidden="true"></div>
+                <div class="photo-outline cat-frame">
+                    <img src="~/images/haku-cat.svg" alt="گربه نارنجی شاد برای صفحه تولد ساحل" />
+                </div>
+                <img class="tiny-cat tiny-cat-hero" src="~/images/haku-cat.svg" alt="" aria-hidden="true" />
+                <div class="cake-badge" aria-hidden="true">🎂</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="love-letter reveal" id="letter">
+        <img class="tiny-cat tiny-cat-letter" src="~/images/haku-cat.svg" alt="" aria-hidden="true" data-parallax="-0.04" />
+        <div class="section-kicker">برای ساحل</div>
+        <h2>یه نامه کوچیک، با کلی حس خوب 💙</h2>
+        <p>
+            ساحل جان، امیدوارم هر روزت مثل اسم قشنگت آروم، روشن و پر از موج‌های خوب باشه. تولدت بهونه‌ایه که بگم
+            بودنت قشنگ‌ترین اتفاقه و لبخندت می‌تونه کل روزمو بسازه.
+        </p>
+        <div class="music-card" data-parallax="0.05">
+            <span>♪</span>
+            <div>
+                <strong>مود امروز:</strong>
+                <small>رقصیدن قلب‌ها، بادکنک‌ها و ستاره‌ها برای تو</small>
+            </div>
+        </div>
+    </section>
+
+    <section class="wish-grid" id="wishes">
+        <article class="wish-card reveal" data-parallax="0.08">
+            <img class="wish-cat" src="~/images/haku-cat.svg" alt="" aria-hidden="true" />
+            <span>✨</span>
+            <h3>آرزوی اول</h3>
+            <p>هر چیزی که دلت می‌خواد، با قشنگ‌ترین شکل ممکن بهت برسه.</p>
+        </article>
+        <article class="wish-card reveal" data-parallax="-0.05">
+            <img class="wish-cat walking" src="~/images/haku-cat.svg" alt="" aria-hidden="true" />
+            <span>💖</span>
+            <h3>آرزوی دوم</h3>
+            <p>لبخندت هیچ‌وقت کم‌رنگ نشه و همیشه دلیل‌های تازه برای خوشحالی داشته باشی.</p>
+        </article>
+        <article class="wish-card reveal" data-parallax="0.1">
+            <img class="wish-cat" src="~/images/haku-cat.svg" alt="" aria-hidden="true" />
+            <span>🌙</span>
+            <h3>آرزوی سوم</h3>
+            <p>شب‌هات پر از آرامش و روزهات پر از اتفاق‌های شیرین باشه.</p>
+        </article>
+    </section>
+
+    <section class="memory-strip reveal" id="memories">
+        <div>
+            <p class="section-kicker">Cat Magic</p>
+            <h2>گربه هاکو با اسکرول می‌رقصه 🐾</h2>
+            <p>از همین گربه نارنجی شاد استفاده کردم و جاهای مختلف صفحه گذاشتمش تا با اسکرول و حرکت‌ها، حس بامزه‌تری بده.</p>
+            <div class="cat-walk" aria-hidden="true">
+                <img src="~/images/haku-cat.svg" alt="" />
+                <span>رقص تا ۱۶ اسفند</span>
+            </div>
+        </div>
+        <div class="memory-orbit" aria-hidden="true">
+            <span>🎁</span>
+            <span>💫</span>
+            <span>🎉</span>
+            <span>❤️</span>
+        </div>
+    </section>
+</section>
