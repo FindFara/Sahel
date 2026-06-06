@@ -22,7 +22,7 @@
             <a href="#home">خانه</a>
             <a href="#letter">نامه</a>
             <a href="#wishes">آرزوها</a>
-            <a href="#memories">خاطره‌ها</a>
+            <a href="#memories">گربه‌ها</a>
         </nav>
 
         <div class="hero-content">
@@ -36,19 +36,30 @@
                     <a class="btn-birthday" href="#letter">پیام منو بخون 💌</a>
                     <span class="date-pill">۱۶ اسفند 🎂</span>
                 </div>
+                <div class="countdown-card" aria-label="شمارش معکوس تا تولد بعدی ساحل">
+                    <p>تا تولد بعدی ساحل مونده:</p>
+                    <div class="countdown-grid" data-countdown>
+                        <span><strong data-countdown-part="days">--</strong><small>روز</small></span>
+                        <span><strong data-countdown-part="hours">--</strong><small>ساعت</small></span>
+                        <span><strong data-countdown-part="minutes">--</strong><small>دقیقه</small></span>
+                        <span><strong data-countdown-part="seconds">--</strong><small>ثانیه</small></span>
+                    </div>
+                </div>
             </div>
 
             <div class="photo-stage" data-parallax="-0.06">
                 <div class="party-hat" aria-hidden="true"></div>
-                <div class="photo-outline">
-                    <img src="~/images/sahel-portrait.svg" alt="تصویر تزئینی ساحل برای صفحه تولد" />
+                <div class="photo-outline cat-frame">
+                    <img src="~/images/sitting-cat.svg" alt="گربه نشسته و بامزه برای صفحه تولد ساحل" />
                 </div>
+                <img class="tiny-cat tiny-cat-hero" src="~/images/walking-cat.svg" alt="" aria-hidden="true" />
                 <div class="cake-badge" aria-hidden="true">🎂</div>
             </div>
         </div>
     </section>
 
     <section class="love-letter reveal" id="letter">
+        <img class="tiny-cat tiny-cat-letter" src="~/images/sitting-cat.svg" alt="" aria-hidden="true" data-parallax="-0.04" />
         <div class="section-kicker">برای ساحل</div>
         <h2>یه نامه کوچیک، با کلی حس خوب 💙</h2>
         <p>
@@ -66,16 +77,19 @@
 
     <section class="wish-grid" id="wishes">
         <article class="wish-card reveal" data-parallax="0.08">
+            <img class="wish-cat" src="~/images/sitting-cat.svg" alt="" aria-hidden="true" />
             <span>✨</span>
             <h3>آرزوی اول</h3>
             <p>هر چیزی که دلت می‌خواد، با قشنگ‌ترین شکل ممکن بهت برسه.</p>
         </article>
         <article class="wish-card reveal" data-parallax="-0.05">
+            <img class="wish-cat walking" src="~/images/walking-cat.svg" alt="" aria-hidden="true" />
             <span>💖</span>
             <h3>آرزوی دوم</h3>
             <p>لبخندت هیچ‌وقت کم‌رنگ نشه و همیشه دلیل‌های تازه برای خوشحالی داشته باشی.</p>
         </article>
         <article class="wish-card reveal" data-parallax="0.1">
+            <img class="wish-cat" src="~/images/sitting-cat.svg" alt="" aria-hidden="true" />
             <span>🌙</span>
             <h3>آرزوی سوم</h3>
             <p>شب‌هات پر از آرامش و روزهات پر از اتفاق‌های شیرین باشه.</p>
@@ -84,9 +98,13 @@
 
     <section class="memory-strip reveal" id="memories">
         <div>
-            <p class="section-kicker">Scroll Magic</p>
-            <h2>با اسکرول، همه‌چی برای ساحل حرکت می‌کنه 🥳</h2>
-            <p>این کارت‌ها، ایموجی‌ها و شکل‌های رنگی با بالا و پایین رفتن صفحه جون می‌گیرن تا حس قالب مرجع رو موبایلی و مدرن‌تر کنن.</p>
+            <p class="section-kicker">Cat Magic</p>
+            <h2>گربه‌های کوچولو با اسکرول راه می‌رن 🐾</h2>
+            <p>به جای عکس واقعی، چند تا گربه بامزه گذاشتم که یکی توی قاب نشسته و چندتاشون جاهای مختلف صفحه راه می‌رن یا لم دادن.</p>
+            <div class="cat-walk" aria-hidden="true">
+                <img src="~/images/walking-cat.svg" alt="" />
+                <span>پیاده‌روی تا ۱۶ اسفند</span>
+            </div>
         </div>
         <div class="memory-orbit" aria-hidden="true">
             <span>🎁</span>
