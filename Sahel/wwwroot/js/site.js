@@ -155,3 +155,87 @@ window.addEventListener('resize', requestScrollAnimation);
 requestScrollAnimation();
 updateCountdown();
 window.setInterval(updateCountdown, 1000);
+
+const balloonField = document.querySelector('[data-balloon-field]');
+const balloonStorageKey = 'sahelReleasedBalloons';
+const balloonPalette = [
+  '#ff007d', '#ffc400', '#35d4ff', '#7c4dff', '#ff8a00', '#54e37a', '#ff5fbf', '#ffffff'
+];
+const balloonLayout = [
+  [6, 10], [17, 7], [29, 12], [42, 8], [55, 13], [68, 7], [81, 11], [94, 8],
+  [10, 27], [23, 23], [35, 31], [49, 25], [61, 33], [74, 24], [88, 30], [97, 24],
+  [4, 47], [16, 43], [28, 51], [40, 45], [52, 54], [65, 46], [78, 52], [91, 44],
+  [9, 68], [21, 62], [34, 71], [47, 64], [59, 73], [72, 65], [85, 70], [96, 62],
+  [14, 86], [31, 82], [50, 88], [69, 81], [87, 86]
+];
+
+function loadReleasedBalloons() {
+  try {
+    return new Set(JSON.parse(window.localStorage.getItem(balloonStorageKey) || '[]'));
+  } catch {
+    return new Set();
+  }
+}
+
+function saveReleasedBalloons(releasedBalloons) {
+  try {
+    window.localStorage.setItem(balloonStorageKey, JSON.stringify([...releasedBalloons]));
+  } catch {
+    // If storage is unavailable, balloons still leave the current page when touched.
+  }
+}
+
+function releaseBalloon(balloon, releasedBalloons) {
+  if (balloon.classList.contains('is-released')) {
+    return;
+  }
+
+  const balloonId = balloon.dataset.balloonId;
+  balloon.classList.add('is-released');
+  balloon.setAttribute('aria-hidden', 'true');
+  balloon.tabIndex = -1;
+  releasedBalloons.add(balloonId);
+  saveReleasedBalloons(releasedBalloons);
+  balloon.addEventListener('animationend', () => balloon.remove(), { once: true });
+}
+
+function createBalloons() {
+  if (!balloonField) {
+    return;
+  }
+
+  const releasedBalloons = loadReleasedBalloons();
+
+  balloonLayout.forEach(([x, y], index) => {
+    const balloonId = `balloon-${index}`;
+
+    if (releasedBalloons.has(balloonId)) {
+      return;
+    }
+
+    const balloon = document.createElement('button');
+    const color = balloonPalette[index % balloonPalette.length];
+    balloon.type = 'button';
+    balloon.className = 'touch-balloon';
+    balloon.dataset.balloonId = balloonId;
+    balloon.setAttribute('aria-label', 'بادکنک را لمس کن تا بالا برود');
+    balloon.style.setProperty('--balloon-x', `${x}%`);
+    balloon.style.setProperty('--balloon-y', `${y}%`);
+    balloon.style.setProperty('--balloon-color', color);
+    balloon.style.setProperty('--balloon-tilt', `${(index % 7 - 3) * 3}deg`);
+    balloon.style.setProperty('--balloon-speed', `${3.1 + (index % 5) * .35}s`);
+    balloon.style.setProperty('--balloon-delay', `${(index % 8) * -.24}s`);
+    balloon.style.setProperty('--balloon-size', `clamp(3.1rem, ${5.7 + (index % 4) * .55}vw, 7.6rem)`);
+    balloon.innerHTML = '<span class="balloon-knot" aria-hidden="true"></span>';
+    balloon.addEventListener('pointerdown', () => releaseBalloon(balloon, releasedBalloons));
+    balloon.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        releaseBalloon(balloon, releasedBalloons);
+      }
+    });
+    balloonField.appendChild(balloon);
+  });
+}
+
+createBalloons();

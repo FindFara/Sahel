@@ -750,3 +750,100 @@ body {
   .wish-cat { width: 6rem; opacity: .55; }
   .cat-walk { width: 100%; justify-content: center; }
 }
+
+.balloon-field {
+  position: fixed;
+  inset: 0;
+  z-index: 9;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.touch-balloon {
+  --balloon-color: var(--hot-pink);
+  --balloon-accent: rgba(255, 255, 255, .42);
+  --balloon-size: clamp(3.4rem, 8vw, 7.2rem);
+  position: absolute;
+  left: var(--balloon-x);
+  top: var(--balloon-y);
+  width: var(--balloon-size);
+  height: calc(var(--balloon-size) * 1.28);
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  pointer-events: auto;
+  filter: drop-shadow(0 1rem 1rem rgba(36, 0, 61, .22));
+  transform: translate(-50%, -50%) rotate(var(--balloon-tilt));
+  animation: balloonSway var(--balloon-speed) ease-in-out infinite;
+  animation-delay: var(--balloon-delay);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.touch-balloon::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 18% 0;
+  border-radius: 52% 48% 48% 52% / 46% 46% 56% 56%;
+  background:
+    radial-gradient(circle at 30% 24%, var(--balloon-accent) 0 13%, transparent 14%),
+    radial-gradient(circle at 65% 80%, rgba(0, 0, 0, .14), transparent 34%),
+    var(--balloon-color);
+  box-shadow: inset -.55rem -.8rem 1rem rgba(0, 0, 0, .13), inset .45rem .55rem .85rem rgba(255, 255, 255, .18);
+}
+
+.touch-balloon::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: .18rem;
+  height: 32%;
+  background: linear-gradient(rgba(255, 255, 255, .85), rgba(255, 255, 255, .08));
+  transform: translateX(-50%);
+  transform-origin: top;
+}
+
+.balloon-knot {
+  position: absolute;
+  left: 50%;
+  bottom: 16%;
+  width: calc(var(--balloon-size) * .18);
+  height: calc(var(--balloon-size) * .15);
+  background: var(--balloon-color);
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  transform: translateX(-50%);
+  filter: brightness(.9);
+}
+
+.touch-balloon:focus-visible {
+  outline: .22rem solid var(--yellow);
+  outline-offset: .35rem;
+  border-radius: 999px;
+}
+
+.touch-balloon.is-released {
+  pointer-events: none;
+  animation: balloonRelease 1.35s cubic-bezier(.18, .78, .22, 1) forwards;
+}
+
+@keyframes balloonSway {
+  0%, 100% { transform: translate(-50%, -50%) rotate(var(--balloon-tilt)); }
+  50% { transform: translate(calc(-50% + .55rem), calc(-50% - .75rem)) rotate(calc(var(--balloon-tilt) * -1)); }
+}
+
+@keyframes balloonRelease {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1) rotate(var(--balloon-tilt));
+  }
+  72% { opacity: 1; }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -155vh) scale(.86) rotate(18deg);
+  }
+}
+
+@media (max-width: 560px) {
+  .touch-balloon { --balloon-size: clamp(2.9rem, 14vw, 5rem); }
+}
