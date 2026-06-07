@@ -185,18 +185,31 @@ function saveReleasedBalloons(releasedBalloons) {
   }
 }
 
-function releaseBalloon(balloon, releasedBalloons) {
+function floatBalloonAway(balloon, releaseDelay = 0) {
   if (balloon.classList.contains('is-released')) {
     return;
   }
 
-  const balloonId = balloon.dataset.balloonId;
+  balloon.style.setProperty('--release-delay', `${releaseDelay}s`);
   balloon.classList.add('is-released');
   balloon.setAttribute('aria-hidden', 'true');
   balloon.tabIndex = -1;
-  releasedBalloons.add(balloonId);
-  saveReleasedBalloons(releasedBalloons);
   balloon.addEventListener('animationend', () => balloon.remove(), { once: true });
+}
+
+function releaseAllBalloons(releasedBalloons) {
+  const balloons = [...balloonField.querySelectorAll('.touch-balloon')];
+
+  if (balloons.length === 0) {
+    return;
+  }
+
+  balloonLayout.forEach((_, index) => releasedBalloons.add(`balloon-${index}`));
+  saveReleasedBalloons(releasedBalloons);
+
+  balloons.forEach((balloon, index) => {
+    floatBalloonAway(balloon, index * .08);
+  });
 }
 
 function createBalloons() {
@@ -227,11 +240,11 @@ function createBalloons() {
     balloon.style.setProperty('--balloon-delay', `${(index % 8) * -.24}s`);
     balloon.style.setProperty('--balloon-size', `clamp(3.1rem, ${5.7 + (index % 4) * .55}vw, 7.6rem)`);
     balloon.innerHTML = '<span class="balloon-knot" aria-hidden="true"></span>';
-    balloon.addEventListener('pointerdown', () => releaseBalloon(balloon, releasedBalloons));
+    balloon.addEventListener('pointerdown', () => releaseAllBalloons(releasedBalloons));
     balloon.addEventListener('keydown', (event) => {
       if (event.key === 'Enter' || event.key === ' ') {
         event.preventDefault();
-        releaseBalloon(balloon, releasedBalloons);
+        releaseAllBalloons(releasedBalloons);
       }
     });
     balloonField.appendChild(balloon);

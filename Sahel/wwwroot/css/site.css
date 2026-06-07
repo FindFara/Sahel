@@ -824,7 +824,8 @@ body {
 
 .touch-balloon.is-released {
   pointer-events: none;
-  animation: balloonRelease 1.35s cubic-bezier(.18, .78, .22, 1) forwards;
+  animation: balloonRelease 4.8s cubic-bezier(.22, .72, .18, 1) forwards;
+  animation-delay: var(--release-delay, 0s);
 }
 
 @keyframes balloonSway {
@@ -837,10 +838,10 @@ body {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1) rotate(var(--balloon-tilt));
   }
-  72% { opacity: 1; }
+  84% { opacity: 1; }
   100% {
     opacity: 0;
-    transform: translate(-50%, -155vh) scale(.86) rotate(18deg);
+    transform: translate(-50%, -145vh) scale(.92) rotate(18deg);
   }
 }
 
