@@ -1,0 +1,21 @@
+@{
+    ViewData["Title"] = "Login";
+}
+
+<section class="login-page" aria-label="Login page">
+    <div class="login-panel">
+        <div class="login-art" aria-hidden="true">
+            <img src="~/images/walking-cat2.svg" alt="" />
+        </div>
+
+        <form class="login-form" asp-action="Login" method="post" autocomplete="off">
+            @Html.AntiForgeryToken()
+            <p class="login-kicker">Private page</p>
+            <h1>Enter your name</h1>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" value="Chihiro" autofocus />
+            <span class="login-error">@Html.ValidationMessage("name")</span>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</section>
