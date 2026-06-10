@@ -1,0 +1,28 @@
+<svg width="720" height="720" viewBox="0 0 720 720" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">گربه نشسته</title>
+  <desc id="desc">گربه کارتونی نشسته با کلاه تولد و قلب کوچک</desc>
+  <defs>
+    <linearGradient id="fur" x1="175" y1="96" x2="553" y2="650" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFE7B8"/><stop offset=".55" stop-color="#F2A65E"/><stop offset="1" stop-color="#D87850"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#281041" flood-opacity=".28"/>
+    </filter>
+  </defs>
+  <ellipse cx="362" cy="636" rx="218" ry="38" fill="#2D1760" opacity=".2"/>
+  <g filter="url(#shadow)">
+    <path d="M208 262l-44-124c-8-24 19-44 39-28l95 76c36-18 84-22 123-8l94-78c20-17 48 3 39 28l-44 130c26 42 38 92 38 146 0 155-83 248-188 248s-188-93-188-248c0-57 11-106 36-142z" fill="url(#fur)"/>
+    <path d="M247 265c53-56 173-62 229-2" stroke="#A95337" stroke-width="16" stroke-linecap="round" opacity=".35"/>
+    <circle cx="287" cy="340" r="18" fill="#261524"/><circle cx="433" cy="340" r="18" fill="#261524"/>
+    <path d="M344 382c7-12 25-12 32 0l-16 16-16-16z" fill="#D23C77"/>
+    <path d="M360 399c-9 20-28 29-47 20M360 399c9 20 28 29 47 20" stroke="#633142" stroke-width="9" stroke-linecap="round"/>
+    <path d="M252 392l-74-18M254 421l-78 8M468 392l74-18M466 421l78 8" stroke="#6B392E" stroke-width="8" stroke-linecap="round" opacity=".75"/>
+    <path d="M267 494c-12 58 27 96 91 96s105-38 95-96" stroke="#FFF2D5" stroke-width="24" stroke-linecap="round" opacity=".65"/>
+    <path d="M200 547c-49-9-78-36-76-72 1-28 20-48 48-50" stroke="#D87850" stroke-width="28" stroke-linecap="round"/>
+    <path d="M512 528c57-4 84-33 83-66-1-29-22-52-51-58" stroke="#D87850" stroke-width="28" stroke-linecap="round"/>
+    <path d="M304 178l48-110 84 154" fill="#FF2F93"/>
+    <path d="M322 138l74 15M338 101l36 8" stroke="#FFE26E" stroke-width="13" stroke-linecap="round"/>
+    <circle cx="350" cy="66" r="18" fill="#FFE26E"/>
+    <path d="M526 217c26-32 75-10 64 31-9 33-52 60-64 70-12-10-54-37-63-70-11-41 38-63 63-31z" fill="#FF2F93"/>
+  </g>
+</svg>
