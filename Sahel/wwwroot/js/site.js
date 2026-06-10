@@ -157,7 +157,7 @@ updateCountdown();
 window.setInterval(updateCountdown, 1000);
 
 const balloonField = document.querySelector('[data-balloon-field]');
-const balloonStorageKey = 'sahelReleasedBalloons';
+const balloonStorageKey = 'sahelPoppedBalloons';
 const balloonPalette = [
   '#ff007d', '#ffc400', '#35d4ff', '#7c4dff', '#ff8a00', '#54e37a', '#ff5fbf', '#ffffff'
 ];
@@ -185,31 +185,18 @@ function saveReleasedBalloons(releasedBalloons) {
   }
 }
 
-function floatBalloonAway(balloon, releaseDelay = 0) {
+function popBalloon(balloon, releasedBalloons) {
   if (balloon.classList.contains('is-released')) {
     return;
   }
 
-  balloon.style.setProperty('--release-delay', `${releaseDelay}s`);
+  const balloonId = balloon.dataset.balloonId;
   balloon.classList.add('is-released');
   balloon.setAttribute('aria-hidden', 'true');
   balloon.tabIndex = -1;
-  balloon.addEventListener('animationend', () => balloon.remove(), { once: true });
-}
-
-function releaseAllBalloons(releasedBalloons) {
-  const balloons = [...balloonField.querySelectorAll('.touch-balloon')];
-
-  if (balloons.length === 0) {
-    return;
-  }
-
-  balloonLayout.forEach((_, index) => releasedBalloons.add(`balloon-${index}`));
+  releasedBalloons.add(balloonId);
   saveReleasedBalloons(releasedBalloons);
-
-  balloons.forEach((balloon, index) => {
-    floatBalloonAway(balloon, index * .08);
-  });
+  balloon.addEventListener('animationend', () => balloon.remove(), { once: true });
 }
 
 function createBalloons() {
@@ -231,7 +218,7 @@ function createBalloons() {
     balloon.type = 'button';
     balloon.className = 'touch-balloon';
     balloon.dataset.balloonId = balloonId;
-    balloon.setAttribute('aria-label', 'بادکنک را لمس کن تا بالا برود');
+    balloon.setAttribute('aria-label', 'بادکنک را لمس کن تا بترکد');
     balloon.style.setProperty('--balloon-x', `${x}%`);
     balloon.style.setProperty('--balloon-y', `${y}%`);
     balloon.style.setProperty('--balloon-color', color);
@@ -240,11 +227,11 @@ function createBalloons() {
     balloon.style.setProperty('--balloon-delay', `${(index % 8) * -.24}s`);
     balloon.style.setProperty('--balloon-size', `clamp(3.1rem, ${5.7 + (index % 4) * .55}vw, 7.6rem)`);
     balloon.innerHTML = '<span class="balloon-knot" aria-hidden="true"></span>';
-    balloon.addEventListener('pointerdown', () => releaseAllBalloons(releasedBalloons));
+    balloon.addEventListener('pointerdown', () => popBalloon(balloon, releasedBalloons));
     balloon.addEventListener('keydown', (event) => {
       if (event.key === 'Enter' || event.key === ' ') {
         event.preventDefault();
-        releaseAllBalloons(releasedBalloons);
+        popBalloon(balloon, releasedBalloons);
       }
     });
     balloonField.appendChild(balloon);
